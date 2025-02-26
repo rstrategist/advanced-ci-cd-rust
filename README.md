@@ -1,4 +1,5 @@
 # advanced-ci-cd-rust
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/rstrategist/advanced-ci-cd-rust)
 
 [![Rust Quality Build and Test](https://github.com/rstrategist/advanced-ci-cd-rust/actions/workflows/main.yml/badge.svg)](https://github.com/rstrategist/advanced-ci-cd-rust/actions/workflows/main.yml)
 [![Clippy](https://github.com/rstrategist/advanced-ci-cd-rust/actions/workflows/clippy.yml/badge.svg)](https://github.com/rstrategist/advanced-ci-cd-rust/actions/workflows/clippy.yml)
