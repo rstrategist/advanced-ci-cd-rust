@@ -13,8 +13,11 @@ RUN cargo build --release
 # Start a new stage to create a lean image
 FROM debian:buster-slim
 
+# Create the necessary directory for the binary
+RUN mkdir -p /usr/local/bin
+
 # Copy the binary from the builder stage to the new production image
-COPY --from=builder /usr/src/myapp/target/release/myapp /usr/local/bin/myapp
+COPY --from=builder /usr/src/myapp/target/release/advanced-ci-cd-rust /usr/local/bin/myapp
 
 # Run the binary
 CMD ["myapp"]
