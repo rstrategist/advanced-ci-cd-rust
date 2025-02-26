@@ -1,6 +1,7 @@
 # advanced-ci-cd-rust
 
 [![Rust Quality Build and Test](https://github.com/rstrategist/advanced-ci-cd-rust/actions/workflows/main.yml/badge.svg)](https://github.com/rstrategist/advanced-ci-cd-rust/actions/workflows/main.yml)
+[![Clippy](https://github.com/rstrategist/advanced-ci-cd-rust/actions/workflows/clippy.yml/badge.svg)](https://github.com/rstrategist/advanced-ci-cd-rust/actions/workflows/clippy.yml)
 
 ## Rust for DevOps - Advanced CI/CD
 
