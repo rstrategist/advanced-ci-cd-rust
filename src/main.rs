@@ -14,13 +14,15 @@
 
 use glob::glob;
 use serde::Deserialize;
-use serde_json;
+//use serde_json;
 use std::fs;
 use std::os::unix::fs::PermissionsExt;
 
 // Load the regex rules.json file to provide configs
 const JSON: &str = include_str!("../compliance-rules/rules.json");
 
+// Define a struct for the data parsed from the JSON file
+// This struct represents a compliance rule
 #[derive(Deserialize, Debug)]
 struct ComplianceRule {
     path_regex: String,
@@ -71,14 +73,18 @@ fn load_rules() -> Vec<ComplianceRule> {
             rule.non_existent_files,
         ));
     }
-    rules
+    rules // Return the vector of ComplianceRule structs
 }
 
+// Apply the compliance rules to the file system and return the exit status
+// See header for the list of exit status codes
 fn apply_rules(rules: Vec<ComplianceRule>, mut status: i32) -> i32 {
     // Iterate over the rules and apply them to the file system
     println!("Applying compliance rules...");
     for rule in rules {
         let mut seen_files: Vec<String> = Vec::new();
+        // glob returns an iterator over the paths that match the pattern
+        // We use expect to handle any errors that may occur
         for entry in glob(&rule.path_regex).expect("Failed to read glob pattern") {
             match entry {
                 Ok(path) => {
